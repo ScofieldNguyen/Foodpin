@@ -100,14 +100,40 @@ class RestaurantTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            restaurantNames.removeAtIndex(indexPath.row)
-            restaurantTypes.removeAtIndex(indexPath.row)
-            restaurantIsVisited.removeAtIndex(indexPath.row)
-            restaurantLocations.removeAtIndex(indexPath.row)
-            restaurantImageNames.removeAtIndex(indexPath.row)
+//        if editingStyle == .Delete {
+//            restaurantNames.removeAtIndex(indexPath.row)
+//            restaurantTypes.removeAtIndex(indexPath.row)
+//            restaurantIsVisited.removeAtIndex(indexPath.row)
+//            restaurantLocations.removeAtIndex(indexPath.row)
+//            restaurantImageNames.removeAtIndex(indexPath.row)
+//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+//        }
+    }
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        // Social sharing button
+        let shareAction = UITableViewRowAction(style: .Default, title: "Share", handler: {
+            (action, indexPath) -> Void in
+            let defaultText = "Just checking at " + self.restaurantNames[indexPath.row]
+            if let imageToShare = UIImage(named: self.restaurantImageNames[indexPath.row]) {
+                let activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
+                self.presentViewController(activityController, animated: true, completion: nil)
+            }
+        })
+        // Delete button
+        let deleteAction = UITableViewRowAction(style: .Default, title: "Delete", handler: {
+            (action, indexPath) -> Void in
+            self.restaurantNames.removeAtIndex(indexPath.row)
+            self.restaurantTypes.removeAtIndex(indexPath.row)
+            self.restaurantIsVisited.removeAtIndex(indexPath.row)
+            self.restaurantLocations.removeAtIndex(indexPath.row)
+            self.restaurantImageNames.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        }
+        })
+        shareAction.backgroundColor = UIColor(red: 28.0/255.0, green: 165.0/255.0,
+                                              blue: 253.0/255.0, alpha: 1.0)
+        deleteAction.backgroundColor = UIColor(red: 202.0/255.0, green: 202.0/255.0, blue: 203.0/255.0, alpha: 1.0)
+        return [deleteAction, shareAction]
     }
     
     override func prefersStatusBarHidden() -> Bool {
