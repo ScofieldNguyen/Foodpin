@@ -46,7 +46,6 @@ class RestaurantTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIndentifier, forIndexPath: indexPath) as! RestaurantTableViewCell
         // configurate the cell...
         cell.nameLabel.text = restaurantNames[indexPath.row]
-//        cell.thumbnailImageView.image = UIImage(named: restaurantImageNames[indexPath.row])
         cell.locationLabel.text = restaurantLocations[indexPath.row]
         cell.typeLabel.text = restaurantTypes[indexPath.row]
         cell.accessoryType = restaurantIsVisited[indexPath.row] ? .Checkmark : .None
@@ -60,55 +59,66 @@ class RestaurantTableViewController: UITableViewController {
         cell.backgroundView = imageView
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let optionMenu = UIAlertController(title: nil, message: "What do you want to do ?", preferredStyle: .ActionSheet)
-        // Create action
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-        
-        let phoneCallHandler = {
-            (action: UIAlertAction) -> Void in
-                let alertMessage = UIAlertController(title: "Service unavailable", message: "Sorry, the call feture is not available yet. Please call later.", preferredStyle: .Alert)
-                let okAction = UIAlertAction(title: "Ok", style: .Cancel, handler: nil)
-                alertMessage.addAction(okAction)
-                self.presentViewController(alertMessage, animated: true, completion: nil)
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showRestaurantDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationSource = segue.destinationViewController as! RestaurantDetailViewController
+                destinationSource.restaurantImage = restaurantImageNames[indexPath.row]
+                destinationSource.restaurantName = restaurantNames[indexPath.row]
+                destinationSource.restaurantLocation = restaurantLocations[indexPath.row]
+                destinationSource.restaurantType = restaurantTypes[indexPath.row]
+            }
         }
-        let phoneCallAction = UIAlertAction(title: "Call 094328915\(indexPath.row)", style: .Default, handler: phoneCallHandler)
-        // Add action to controller
-        optionMenu.addAction(cancelAction)
-        optionMenu.addAction(phoneCallAction)
-        if restaurantIsVisited[indexPath.row] {
-            let unvisitedAction = UIAlertAction(title: "I haven't been here", style: .Default, handler: {
-                (action: UIAlertAction) -> Void in
-                let currentSelectedCell = tableView.cellForRowAtIndexPath(indexPath)
-                currentSelectedCell?.accessoryType = .None
-                self.restaurantIsVisited[indexPath.row] = false
-            })
-            optionMenu.addAction(unvisitedAction)
-        }else{
-            let visitedAction = UIAlertAction(title: "I've been here", style: .Default, handler: {
-                (action: UIAlertAction) -> Void in
-                let currentSelectedCell = tableView.cellForRowAtIndexPath(indexPath)
-                currentSelectedCell?.accessoryType = .Checkmark
-                self.restaurantIsVisited[indexPath.row] = true
-            })
-            optionMenu.addAction(visitedAction)
-        }
-        // Present
-        self.presentViewController(optionMenu, animated: true, completion: nil)
-        // Deselect Row
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-    
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-//        if editingStyle == .Delete {
-//            restaurantNames.removeAtIndex(indexPath.row)
-//            restaurantTypes.removeAtIndex(indexPath.row)
-//            restaurantIsVisited.removeAtIndex(indexPath.row)
-//            restaurantLocations.removeAtIndex(indexPath.row)
-//            restaurantImageNames.removeAtIndex(indexPath.row)
-//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        let optionMenu = UIAlertController(title: nil, message: "What do you want to do ?", preferredStyle: .ActionSheet)
+//        // Create action
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+//        
+//        let phoneCallHandler = {
+//            (action: UIAlertAction) -> Void in
+//                let alertMessage = UIAlertController(title: "Service unavailable", message: "Sorry, the call feture is not available yet. Please call later.", preferredStyle: .Alert)
+//                let okAction = UIAlertAction(title: "Ok", style: .Cancel, handler: nil)
+//                alertMessage.addAction(okAction)
+//                self.presentViewController(alertMessage, animated: true, completion: nil)
 //        }
-    }
+//        let phoneCallAction = UIAlertAction(title: "Call 094328915\(indexPath.row)", style: .Default, handler: phoneCallHandler)
+//        // Add action to controller
+//        optionMenu.addAction(cancelAction)
+//        optionMenu.addAction(phoneCallAction)
+//        if restaurantIsVisited[indexPath.row] {
+//            let unvisitedAction = UIAlertAction(title: "I haven't been here", style: .Default, handler: {
+//                (action: UIAlertAction) -> Void in
+//                let currentSelectedCell = tableView.cellForRowAtIndexPath(indexPath)
+//                currentSelectedCell?.accessoryType = .None
+//                self.restaurantIsVisited[indexPath.row] = false
+//            })
+//            optionMenu.addAction(unvisitedAction)
+//        }else{
+//            let visitedAction = UIAlertAction(title: "I've been here", style: .Default, handler: {
+//                (action: UIAlertAction) -> Void in
+//                let currentSelectedCell = tableView.cellForRowAtIndexPath(indexPath)
+//                currentSelectedCell?.accessoryType = .Checkmark
+//                self.restaurantIsVisited[indexPath.row] = true
+//            })
+//            optionMenu.addAction(visitedAction)
+//        }
+//        // Present
+//        self.presentViewController(optionMenu, animated: true, completion: nil)
+//        // Deselect Row
+//        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+//    }
+    
+//    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+////        if editingStyle == .Delete {
+////            restaurantNames.removeAtIndex(indexPath.row)
+////            restaurantTypes.removeAtIndex(indexPath.row)
+////            restaurantIsVisited.removeAtIndex(indexPath.row)
+////            restaurantLocations.removeAtIndex(indexPath.row)
+////            restaurantImageNames.removeAtIndex(indexPath.row)
+////            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+////        }
+//    }
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         // Social sharing button

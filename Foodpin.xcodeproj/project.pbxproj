@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71392ECB1DAFDA62009031D7 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71392ECA1DAFDA62009031D7 /* RestaurantDetailViewController.swift */; };
 		719D4D4F1DA4D089004D88AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D4D4E1DA4D089004D88AC /* AppDelegate.swift */; };
 		719D4D541DA4D089004D88AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 719D4D521DA4D089004D88AC /* Main.storyboard */; };
 		719D4D561DA4D089004D88AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 719D4D551DA4D089004D88AC /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		71392ECA1DAFDA62009031D7 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		719D4D4B1DA4D089004D88AC /* Foodpin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodpin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		719D4D4E1DA4D089004D88AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		719D4D531DA4D089004D88AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				719D4D621DA4DDAE004D88AC /* RestaurantTableViewController.swift */,
 				719D4D641DA4E972004D88AC /* RestaurantTableViewCell.swift */,
 				719D4D521DA4D089004D88AC /* Main.storyboard */,
+				71392ECA1DAFDA62009031D7 /* RestaurantDetailViewController.swift */,
 			);
 			path = Foodpin;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			files = (
 				719D4D631DA4DDAE004D88AC /* RestaurantTableViewController.swift in Sources */,
 				719D4D651DA4E972004D88AC /* RestaurantTableViewCell.swift in Sources */,
+				71392ECB1DAFDA62009031D7 /* RestaurantDetailViewController.swift in Sources */,
 				719D4D4F1DA4D089004D88AC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
