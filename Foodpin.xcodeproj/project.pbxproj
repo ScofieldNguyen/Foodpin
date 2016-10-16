@@ -14,6 +14,7 @@
 		719D4D591DA4D089004D88AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 719D4D571DA4D089004D88AC /* LaunchScreen.storyboard */; };
 		719D4D631DA4DDAE004D88AC /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D4D621DA4DDAE004D88AC /* RestaurantTableViewController.swift */; };
 		719D4D651DA4E972004D88AC /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D4D641DA4E972004D88AC /* RestaurantTableViewCell.swift */; };
+		71BDF04A1DB12A8D008A79D6 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BDF0491DB12A8C008A79D6 /* Restaurant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		719D4D5A1DA4D089004D88AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		719D4D621DA4DDAE004D88AC /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
 		719D4D641DA4E972004D88AC /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		71BDF0491DB12A8C008A79D6 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				719D4D641DA4E972004D88AC /* RestaurantTableViewCell.swift */,
 				719D4D521DA4D089004D88AC /* Main.storyboard */,
 				71392ECA1DAFDA62009031D7 /* RestaurantDetailViewController.swift */,
+				71BDF0491DB12A8C008A79D6 /* Restaurant.swift */,
 			);
 			path = Foodpin;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71BDF04A1DB12A8D008A79D6 /* Restaurant.swift in Sources */,
 				719D4D631DA4DDAE004D88AC /* RestaurantTableViewController.swift in Sources */,
 				719D4D651DA4E972004D88AC /* RestaurantTableViewCell.swift in Sources */,
 				71392ECB1DAFDA62009031D7 /* RestaurantDetailViewController.swift in Sources */,
