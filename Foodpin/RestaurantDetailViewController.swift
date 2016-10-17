@@ -8,21 +8,15 @@
 
 import UIKit
 
-class RestaurantDetailViewController: UIViewController {
+class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var restaurantImageView: UIImageView!
-    @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var locationLabel: UILabel!
-    @IBOutlet var typeLabel: UILabel!
     
     var restaurant: Restaurant!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         restaurantImageView.image = UIImage(named: restaurant.image)
-        nameLabel.text = restaurant.name
-        locationLabel.text = restaurant.location
-        typeLabel.text = restaurant.type
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,7 +24,31 @@ class RestaurantDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! RestaurantDetailTableViewCell
+        switch indexPath.row {
+        case 0:
+            cell.fieldLabel.text = "Name"
+            cell.valueLabel.text = restaurant.name
+        case 1:
+            cell.fieldLabel.text = "Type"
+            cell.valueLabel.text = restaurant.type
+        case 2:
+            cell.fieldLabel.text = "Location"
+            cell.valueLabel.text = restaurant.location
+        case 3:
+            cell.fieldLabel.text = "Been there"
+            cell.valueLabel.text = restaurant.isVisisted ? "Yes i've been here" : "No"
+        default:
+            cell.fieldLabel.text = ""
+            cell.valueLabel.text = ""
+        }
+        return cell
+    }
     /*
     // MARK: - Navigation
 
