@@ -177,10 +177,7 @@ class RestaurantTableViewController: UITableViewController {
         deleteAction.backgroundColor = UIColor(red: 202.0/255.0, green: 202.0/255.0, blue: 203.0/255.0, alpha: 1.0)
         return [deleteAction, shareAction]
     }
-    
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
+
 
     /*
     // Override to support conditional editing of the table view.
