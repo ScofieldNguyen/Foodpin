@@ -21,13 +21,13 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         restaurantDetailTableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue:
             240.0/255.0, alpha: 0.2)
         restaurantDetailTableView.tableFooterView = UIView(frame: CGRectZero)
-        // Setting UINavigationBar
-        let navigationBarApperance = UINavigationBar.appearance()
-        navigationBarApperance.barTintColor = UIColor(red: 244.0/255.0, green: 137.0/255.0, blue: 141.0/255.0, alpha: 1.0)
-        if let barFont = UIFont(name: "Avenir-Light", size: 24.0) {
-            navigationBarApperance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(), NSFontAttributeName:barFont]
-        }
-        navigationBarApperance.tintColor = UIColor.whiteColor()
+        title = restaurant.name
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

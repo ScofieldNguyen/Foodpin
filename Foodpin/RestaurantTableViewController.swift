@@ -55,8 +55,13 @@ class RestaurantTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style:
+            .Plain, target: nil, action: nil)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.hidesBarsOnSwipe = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -165,10 +170,6 @@ class RestaurantTableViewController: UITableViewController {
         // Delete button
         let deleteAction = UITableViewRowAction(style: .Default, title: "Delete", handler: {
             (action, indexPath) -> Void in
-            self.restaurants.removeAtIndex(indexPath.row)
-            self.restaurants.removeAtIndex(indexPath.row)
-            self.restaurants.removeAtIndex(indexPath.row)
-            self.restaurants.removeAtIndex(indexPath.row)
             self.restaurants.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         })
