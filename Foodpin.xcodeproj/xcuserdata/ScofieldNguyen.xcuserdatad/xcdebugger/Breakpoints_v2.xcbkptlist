@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Foodpin/Restaurant.swift"
-            timestampString = "498150872.770003"
+            timestampString = "498716060.198892"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "init(name:type:location:image:isVisited:)"
             landmarkType = "5">
          </BreakpointContent>

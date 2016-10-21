@@ -14,6 +14,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     @IBOutlet var restaurantDetailTableView: UITableView!
     
     var restaurant: Restaurant!
+    let numberOfRows = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return numberOfRows
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -52,6 +53,9 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             cell.fieldLabel.text = "Location"
             cell.valueLabel.text = restaurant.location
         case 3:
+            cell.fieldLabel.text = "Phone number"
+            cell.valueLabel.text = restaurant.phoneNumber
+        case 4:
             cell.fieldLabel.text = "Been there"
             cell.valueLabel.text = restaurant.isVisisted ? "Yes i've been here" : "No"
         default:
