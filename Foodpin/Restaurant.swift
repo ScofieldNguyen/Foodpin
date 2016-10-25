@@ -14,11 +14,12 @@ class Restaurant {
     var location = ""
     var image = ""
     var isVisisted = false
-    let phoneNumber = "343-988834"
-    init(name: String, type: String, location: String, image: String, isVisited: Bool) {
+    var phoneNumber = ""
+    init(name: String, type: String, location: String, phoneNumber: String, image: String, isVisited: Bool) {
         self.name = name
         self.type = type
         self.location = location
+        self.phoneNumber = phoneNumber
         self.image = image
         self.isVisisted = isVisited
     }

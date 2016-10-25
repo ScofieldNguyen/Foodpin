@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Foodpin/RestaurantTableViewController.swift"
-            timestampString = "498643747.904585"
+            timestampString = "498717694.607007"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "tableView(_:editActionsForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Foodpin/Restaurant.swift"
-            timestampString = "498716060.198892"
+            timestampString = "498717694.607007"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "init(name:type:location:image:isVisited:)"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "init(name:type:location:phoneNumber:image:isVisited:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

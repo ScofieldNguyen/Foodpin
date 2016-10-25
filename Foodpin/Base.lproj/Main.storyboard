@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GwQ-u0-Ln9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GwQ-u0-Ln9">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -23,11 +23,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="185.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="LUJ-91-ttc">
-                                            <rect key="frame" x="8" y="33" width="140" height="119"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="LUJ-91-ttc">
+                                            <rect key="frame" x="8" y="66" width="584" height="112"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7R-lM-TVv">
-                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="38"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7R-lM-TVv">
+                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="57"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -35,14 +35,14 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="45" height="25"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqd-5X-Lt5">
-                                                    <rect key="frame" x="0.0" y="41" width="35" height="38"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqd-5X-Lt5">
+                                                    <rect key="frame" x="0.0" y="68" width="35" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="318-Hn-fnv">
-                                                    <rect key="frame" x="0.0" y="82" width="30" height="38"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="318-Hn-fnv">
+                                                    <rect key="frame" x="0.0" y="96" width="30" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -60,9 +60,10 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="LUJ-91-ttc" secondAttribute="bottom" constant="25.5" id="35e-1n-yBr"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="LUJ-91-ttc" secondAttribute="bottom" id="35e-1n-yBr"/>
                                         <constraint firstItem="LUJ-91-ttc" firstAttribute="leading" secondItem="X8t-3p-aof" secondAttribute="leadingMargin" id="Dzg-Lr-i9g"/>
-                                        <constraint firstItem="LUJ-91-ttc" firstAttribute="top" secondItem="X8t-3p-aof" secondAttribute="topMargin" constant="25" id="L4a-dB-9Mb"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="LUJ-91-ttc" secondAttribute="trailing" id="EbL-eP-8vK"/>
+                                        <constraint firstItem="LUJ-91-ttc" firstAttribute="top" secondItem="X8t-3p-aof" secondAttribute="topMargin" constant="58" id="L4a-dB-9Mb"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -117,10 +118,10 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="261" verticalHuggingPriority="251" text="Field" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXy-bZ-DtC">
                                                             <rect key="frame" x="0.0" y="0.0" width="292" height="23"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCE-5X-UrP">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCE-5X-UrP">
                                                             <rect key="frame" x="292" y="0.0" width="292" height="23"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -133,9 +134,11 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Rof-WT-f2c" secondAttribute="bottom" constant="-2.5" id="8nm-eq-yAW"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Rof-WT-f2c" secondAttribute="trailing" id="AXk-Pt-roc"/>
                                                 <constraint firstItem="Rof-WT-f2c" firstAttribute="leading" secondItem="Lal-Qy-J0f" secondAttribute="leadingMargin" id="Sda-wq-KJq"/>
                                                 <constraint firstItem="Rof-WT-f2c" firstAttribute="centerY" secondItem="Lal-Qy-J0f" secondAttribute="centerY" id="Uxl-BF-Bmg"/>
+                                                <constraint firstItem="Rof-WT-f2c" firstAttribute="top" secondItem="Lal-Qy-J0f" secondAttribute="topMargin" constant="-1" id="ygG-CQ-dSC"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
