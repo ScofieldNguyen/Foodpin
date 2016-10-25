@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7109EE321DB3449600001B64 /* RestaurantDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7109EE311DB3449600001B64 /* RestaurantDetailTableViewCell.swift */; };
+		71287AB31DBFC045002AB825 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71287AB21DBFC045002AB825 /* PreviewViewController.swift */; };
 		71392ECB1DAFDA62009031D7 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71392ECA1DAFDA62009031D7 /* RestaurantDetailViewController.swift */; };
 		719D4D4F1DA4D089004D88AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D4D4E1DA4D089004D88AC /* AppDelegate.swift */; };
 		719D4D541DA4D089004D88AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 719D4D521DA4D089004D88AC /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		7109EE311DB3449600001B64 /* RestaurantDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTableViewCell.swift; sourceTree = "<group>"; };
+		71287AB21DBFC045002AB825 /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		71392ECA1DAFDA62009031D7 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		719D4D4B1DA4D089004D88AC /* Foodpin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodpin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		719D4D4E1DA4D089004D88AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				71392ECA1DAFDA62009031D7 /* RestaurantDetailViewController.swift */,
 				71BDF0491DB12A8C008A79D6 /* Restaurant.swift */,
 				7109EE311DB3449600001B64 /* RestaurantDetailTableViewCell.swift */,
+				71287AB21DBFC045002AB825 /* PreviewViewController.swift */,
 			);
 			path = Foodpin;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			files = (
 				71BDF04A1DB12A8D008A79D6 /* Restaurant.swift in Sources */,
 				719D4D631DA4DDAE004D88AC /* RestaurantTableViewController.swift in Sources */,
+				71287AB31DBFC045002AB825 /* PreviewViewController.swift in Sources */,
 				719D4D651DA4E972004D88AC /* RestaurantTableViewCell.swift in Sources */,
 				7109EE321DB3449600001B64 /* RestaurantDetailTableViewCell.swift in Sources */,
 				71392ECB1DAFDA62009031D7 /* RestaurantDetailViewController.swift in Sources */,

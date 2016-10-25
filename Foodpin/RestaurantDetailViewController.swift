@@ -67,6 +67,9 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         cell.backgroundColor = UIColor.clearColor()
         return cell
     }
+    
+    @IBAction func close(segue: UIStoryboardSegue) {
+    }
     /*
     // MARK: - Navigation
 
