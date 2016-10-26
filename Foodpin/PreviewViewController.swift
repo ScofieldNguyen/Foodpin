@@ -11,18 +11,26 @@ import UIKit
 class PreviewViewController: UIViewController {
 
     @IBOutlet var backgroundImageView: UIImageView!
+    @IBOutlet var ratingStackView: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
         let blurEffect = UIBlurEffect(style: .Light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)
+        ratingStackView.transform = CGAffineTransformMakeScale(0.0, 0.0)
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        UIView.animateWithDuration(0.7, delay: 0.3, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+                self.ratingStackView.transform = CGAffineTransformIdentity
+            }, completion: nil)
     }
     
 
