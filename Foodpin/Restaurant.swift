@@ -15,6 +15,12 @@ class Restaurant {
     var image = ""
     var isVisisted = false
     var phoneNumber = ""
+    var rate: Rate = .great
+    enum Rate: String {
+        case good = "good"
+        case dislike = "dislike"
+        case great = "great"
+    }
     init(name: String, type: String, location: String, phoneNumber: String, image: String, isVisited: Bool) {
         self.name = name
         self.type = type

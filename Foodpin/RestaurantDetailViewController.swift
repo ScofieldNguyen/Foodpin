@@ -12,6 +12,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     
     @IBOutlet var restaurantImageView: UIImageView!
     @IBOutlet var restaurantDetailTableView: UITableView!
+    @IBOutlet var ratingButton: UIButton!
     
     var restaurant: Restaurant!
     let numberOfRows = 5
@@ -25,6 +26,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         title = restaurant.name
         restaurantDetailTableView.estimatedRowHeight = 36.0
         restaurantDetailTableView.rowHeight = UITableViewAutomaticDimension
+        self.ratingButton.setImage(UIImage(named: restaurant.rate.rawValue), forState: .Normal)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -69,6 +71,12 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     }
     
     @IBAction func close(segue: UIStoryboardSegue) {
+        if let previewViewController = segue.sourceViewController as? PreviewViewController {
+            if let rate = previewViewController.rate {
+                self.ratingButton.setImage(UIImage(named: rate.rawValue), forState: .Normal)
+                restaurant.rate = rate
+            }
+        }
     }
     /*
     // MARK: - Navigation
