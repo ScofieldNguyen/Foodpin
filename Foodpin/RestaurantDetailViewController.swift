@@ -78,6 +78,14 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             }
         }
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showMap" {
+            if let destinationViewController = segue.destinationViewController as? MapViewController {
+                destinationViewController.restaurant = restaurant
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 

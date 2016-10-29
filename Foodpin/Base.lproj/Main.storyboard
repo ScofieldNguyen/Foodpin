@@ -177,16 +177,42 @@
                                     <segue destination="XI9-6D-AmX" kind="presentation" identifier="showReview" id="JYd-uj-xoy"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfD-Dt-tRO">
+                                <rect key="frame" x="540" y="126" width="40" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Jxg-7L-Wpo"/>
+                                    <constraint firstAttribute="width" constant="40" id="gsg-2k-Oi6"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="map"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="ad3-e2-xQW" kind="show" identifier="showMap" id="VcU-T0-8hQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="orE-0e-E29" secondAttribute="trailing" constant="-20" id="20F-mD-q6E"/>
                             <constraint firstItem="ZL8-zb-sEj" firstAttribute="trailing" secondItem="6Ar-NP-13m" secondAttribute="trailingMargin" id="F4a-Fa-ttG"/>
                             <constraint firstItem="k5U-lv-dgA" firstAttribute="top" secondItem="orE-0e-E29" secondAttribute="bottom" id="I5s-ew-Rx0"/>
+                            <constraint firstItem="bfD-Dt-tRO" firstAttribute="top" secondItem="ZL8-zb-sEj" secondAttribute="bottom" constant="14" id="Pcn-5b-n9I"/>
                             <constraint firstItem="orE-0e-E29" firstAttribute="leading" secondItem="6Ar-NP-13m" secondAttribute="leadingMargin" constant="-20" id="iB9-pH-AFX"/>
                             <constraint firstItem="ZL8-zb-sEj" firstAttribute="top" secondItem="3Nb-LP-1TM" secondAttribute="bottom" constant="8" id="oPn-Gg-BiP"/>
                             <constraint firstItem="orE-0e-E29" firstAttribute="top" secondItem="3Nb-LP-1TM" secondAttribute="bottom" constant="-64" id="pXL-vy-Ogx"/>
+                            <constraint firstItem="bfD-Dt-tRO" firstAttribute="trailing" secondItem="6Ar-NP-13m" secondAttribute="trailingMargin" id="snL-sc-poK"/>
+                            <constraint firstItem="bfD-Dt-tRO" firstAttribute="leading" secondItem="orE-0e-E29" secondAttribute="trailing" constant="-60" id="vco-DX-nKQ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="vco-DX-nKQ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="ratingButton" destination="ZL8-zb-sEj" id="BEB-MK-JSA"/>
@@ -197,6 +223,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FWW-WK-G5Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1798" y="120"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="F1g-B1-iXe">
+            <objects>
+                <viewController id="ad3-e2-xQW" customClass="MapViewController" customModule="Foodpin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g3c-0o-JCb"/>
+                        <viewControllerLayoutGuide type="bottom" id="C7K-6Q-ZTd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ejT-Mo-rIN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Qz-AH-fdU">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8Qz-AH-fdU" firstAttribute="leading" secondItem="ejT-Mo-rIN" secondAttribute="leading" id="QF9-Mz-mLn"/>
+                            <constraint firstItem="8Qz-AH-fdU" firstAttribute="top" secondItem="ejT-Mo-rIN" secondAttribute="top" id="pzT-aS-2Tg"/>
+                            <constraint firstItem="8Qz-AH-fdU" firstAttribute="bottom" secondItem="C7K-6Q-ZTd" secondAttribute="top" id="x8u-uD-xJG"/>
+                            <constraint firstAttribute="trailing" secondItem="8Qz-AH-fdU" secondAttribute="trailing" id="y6Y-N1-5kd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="8Qz-AH-fdU" id="PFM-Sh-ovD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g9y-fL-LIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1798" y="845"/>
         </scene>
         <!--Preview View Controller-->
         <scene sceneID="w3A-zF-pGN">
@@ -344,6 +402,7 @@
         <image name="dislike" width="84" height="84"/>
         <image name="good" width="256" height="256"/>
         <image name="great" width="256" height="256"/>
+        <image name="map" width="48" height="48"/>
         <image name="rating" width="256" height="256"/>
     </resources>
 </document>
