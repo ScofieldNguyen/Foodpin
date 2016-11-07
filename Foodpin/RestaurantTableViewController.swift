@@ -111,6 +111,9 @@ class RestaurantTableViewController: UITableViewController {
             }
         }
     }
+    
+    @IBAction func unwindToHomeScreen(segue: UIStoryboardSegue) {
+    }
 //    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 //        let optionMenu = UIAlertController(title: nil, message: "What do you want to do ?", preferredStyle: .ActionSheet)
 //        // Create action

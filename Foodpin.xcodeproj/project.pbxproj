@@ -18,6 +18,7 @@
 		719D4D631DA4DDAE004D88AC /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D4D621DA4DDAE004D88AC /* RestaurantTableViewController.swift */; };
 		719D4D651DA4E972004D88AC /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D4D641DA4E972004D88AC /* RestaurantTableViewCell.swift */; };
 		71BDF04A1DB12A8D008A79D6 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BDF0491DB12A8C008A79D6 /* Restaurant.swift */; };
+		71D48B841DC9CB1200A244BA /* AddRestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D48B831DC9CB1200A244BA /* AddRestaurantController.swift */; };
 		71F5B91E1DC4753B00F9578B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F5B91D1DC4753B00F9578B /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		719D4D621DA4DDAE004D88AC /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
 		719D4D641DA4E972004D88AC /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		71BDF0491DB12A8C008A79D6 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		71D48B831DC9CB1200A244BA /* AddRestaurantController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRestaurantController.swift; sourceTree = "<group>"; };
 		71F5B91D1DC4753B00F9578B /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +84,7 @@
 				71287AB21DBFC045002AB825 /* PreviewViewController.swift */,
 				71BDF0491DB12A8C008A79D6 /* Restaurant.swift */,
 				71F5B91D1DC4753B00F9578B /* MapViewController.swift */,
+				71D48B831DC9CB1200A244BA /* AddRestaurantController.swift */,
 			);
 			path = Foodpin;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71D48B841DC9CB1200A244BA /* AddRestaurantController.swift in Sources */,
 				71BDF04A1DB12A8D008A79D6 /* Restaurant.swift in Sources */,
 				719D4D631DA4DDAE004D88AC /* RestaurantTableViewController.swift in Sources */,
 				71287AB31DBFC045002AB825 /* PreviewViewController.swift in Sources */,
