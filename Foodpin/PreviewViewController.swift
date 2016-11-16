@@ -13,7 +13,7 @@ class PreviewViewController: UIViewController {
     let dislikeTagValue = 100
     let goodTagValue = 200
     let greatTagValue = 300
-    var rate: Restaurant.Rate?
+    var rate: String?
     @IBOutlet var backgroundImageView: UIImageView!
     @IBOutlet var dislikeButton: UIButton!
     @IBOutlet var goodButton: UIButton!
@@ -21,11 +21,11 @@ class PreviewViewController: UIViewController {
     @IBAction func determineRatingSelected(senderButton: UIButton) -> Void {
         switch senderButton.tag {
         case dislikeTagValue:
-            rate = Restaurant.Rate.dislike
+            rate = "dislike"
         case goodTagValue:
-            rate = Restaurant.Rate.good
+            rate = "good"
         case greatTagValue:
-            rate = Restaurant.Rate.great
+            rate = "great"
         default:
             break
         }

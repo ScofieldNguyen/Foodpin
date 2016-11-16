@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
-class AddRestaurantController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddRestaurantController: UITableViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    
+    var restaurant: Restaurant!
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var buttonYes: UIButton!
@@ -16,6 +19,7 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
     @IBOutlet var restaurantNameTextField: UITextField!
     @IBOutlet var restaurantLocationTextField: UITextField!
     @IBOutlet var restaurantTypeTextField: UITextField!
+    @IBOutlet var restaurantPhonenumberTextField: UITextField!
     
     let yesButtonTagValue = 100
     let noButtonTagValue = 200
@@ -121,22 +125,37 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
         let restaurantName = restaurantNameTextField.text
         let restaurantLocation = restaurantLocationTextField.text
         let restaurantType = restaurantTypeTextField.text
+        let restaurantPhonenumber = restaurantPhonenumberTextField.text
         // if something's blank
-        if restaurantName == "" || restaurantLocation == "" || restaurantType == "" {
+        if restaurantName == "" || restaurantLocation == "" || restaurantType == "" || restaurantPhonenumber == "" {
             //  then post an error
             let alert = UIAlertController(title: "Oops", message: "We can't proceed because one of the fields is blank. Please note that all of fields are required", preferredStyle: .Alert)
             let okeAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
             alert.addAction(okeAction)
             self.presentViewController(alert, animated: true, completion: nil)
         }else{
-            // else show everything on an alert
-            let alert = UIAlertController(title: "Restaurant Infor", message: "Name:\(restaurantName) \nType: \(restaurantType) \nLocation: \(restaurantLocation) \nHave you been here: \(beenHere)", preferredStyle: .Alert)
-            let okeAction = UIAlertAction(title: "OK", style: .Default, handler: {
-                (action: UIAlertAction) -> Void in
-                self.performSegueWithIdentifier("unwindToHomeScreen", sender: self)
-            })
-            alert.addAction(okeAction)
-            self.presentViewController(alert, animated: true, completion: nil)
+            saveToDatabase()
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+    }
+    
+    func saveToDatabase() {
+        if let manageObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
+            restaurant = NSEntityDescription.insertNewObjectForEntityForName("Restaurant", inManagedObjectContext: manageObjectContext) as! Restaurant
+            restaurant.name = restaurantNameTextField.text!
+            restaurant.location = restaurantLocationTextField.text!
+            restaurant.type = restaurantTypeTextField.text!
+            restaurant.isVisited = beenHere
+            restaurant.phoneNumber = restaurantPhonenumberTextField.text
+            if let restaurantImage = imageView.image {
+                restaurant.image = UIImagePNGRepresentation(restaurantImage)
+            }
+            do {
+                try manageObjectContext.save()
+            } catch {
+                print(error)
+                return
+            }
         }
     }
     // MARK: - Table view data source

@@ -19,14 +19,16 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        restaurantImageView.image = UIImage(named: restaurant.image)
+        restaurantImageView.image = UIImage(data: restaurant.image!)
         restaurantDetailTableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue:
             240.0/255.0, alpha: 0.2)
         restaurantDetailTableView.tableFooterView = UIView(frame: CGRectZero)
         title = restaurant.name
         restaurantDetailTableView.estimatedRowHeight = 36.0
         restaurantDetailTableView.rowHeight = UITableViewAutomaticDimension
-        self.ratingButton.setImage(UIImage(named: restaurant.rate.rawValue), forState: .Normal)
+        if let rate = restaurant.rate {
+            self.ratingButton.setImage(UIImage(named: rate), forState: .Normal)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -61,7 +63,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             cell.valueLabel.text = restaurant.phoneNumber
         case 4:
             cell.fieldLabel.text = "Been there"
-            cell.valueLabel.text = restaurant.isVisisted ? "Yes i've been here" : "No"
+            cell.valueLabel.text = restaurant.isVisited!.boolValue ? "Yes i've been here" : "No"
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""
@@ -73,8 +75,15 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     @IBAction func close(segue: UIStoryboardSegue) {
         if let previewViewController = segue.sourceViewController as? PreviewViewController {
             if let rate = previewViewController.rate {
-                self.ratingButton.setImage(UIImage(named: rate.rawValue), forState: .Normal)
+                self.ratingButton.setImage(UIImage(named: rate), forState: .Normal)
                 restaurant.rate = rate
+                if let manageObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
+                    do {
+                        try manageObjectContext.save()
+                    } catch {
+                        print(error)
+                    }
+                }
             }
         }
     }
