@@ -28,12 +28,18 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         })
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        // Load walkthrough
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style:
             .Plain, target: nil, action: nil)
         
@@ -46,6 +52,19 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         searchController.searchBar.placeholder = "Search restaurants..."
         
         tableView.tableHeaderView = searchController.searchBar
+    
+        // Show walkthough cuoi cung
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let hasViewedWalkthrough = defaults.boolForKey("hasViewedWalkthrough")
+        
+        if hasViewedWalkthrough {
+            return
+        }
+        
+        if let pageViewController = storyboard?.instantiateViewControllerWithIdentifier("WalkthroughController") as? WalkthroughPageViewController {
+            presentViewController(pageViewController, animated: true, completion: nil)
+            defaults.setBool(true, forKey: "hasViewedWalkthrough")
+        }
         
     }
     

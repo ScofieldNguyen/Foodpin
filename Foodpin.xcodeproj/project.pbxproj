@@ -11,7 +11,9 @@
 		71287AB31DBFC045002AB825 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71287AB21DBFC045002AB825 /* PreviewViewController.swift */; };
 		71392ECB1DAFDA62009031D7 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71392ECA1DAFDA62009031D7 /* RestaurantDetailViewController.swift */; };
 		71464A2C1DC2544D00741603 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71464A2B1DC2544D00741603 /* MapKit.framework */; };
+		7157C40A1DE03047009A8AFB /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7157C4091DE03047009A8AFB /* WalkthroughContentViewController.swift */; };
 		715F061E1DD1A70D002212D2 /* Foodpin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 715F061C1DD1A70D002212D2 /* Foodpin.xcdatamodeld */; };
+		716FB11B1DF162D4006F1381 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716FB11A1DF162D4006F1381 /* WalkthroughPageViewController.swift */; };
 		719D4D4F1DA4D089004D88AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D4D4E1DA4D089004D88AC /* AppDelegate.swift */; };
 		719D4D541DA4D089004D88AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 719D4D521DA4D089004D88AC /* Main.storyboard */; };
 		719D4D561DA4D089004D88AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 719D4D551DA4D089004D88AC /* Assets.xcassets */; };
@@ -28,7 +30,9 @@
 		71287AB21DBFC045002AB825 /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		71392ECA1DAFDA62009031D7 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		71464A2B1DC2544D00741603 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		7157C4091DE03047009A8AFB /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
 		715F061D1DD1A70D002212D2 /* Foodpin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Foodpin.xcdatamodel; sourceTree = "<group>"; };
+		716FB11A1DF162D4006F1381 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		719D4D4B1DA4D089004D88AC /* Foodpin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodpin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		719D4D4E1DA4D089004D88AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		719D4D531DA4D089004D88AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 				71F5B91D1DC4753B00F9578B /* MapViewController.swift */,
 				71D48B831DC9CB1200A244BA /* AddRestaurantController.swift */,
 				715F061C1DD1A70D002212D2 /* Foodpin.xcdatamodeld */,
+				7157C4091DE03047009A8AFB /* WalkthroughContentViewController.swift */,
+				716FB11A1DF162D4006F1381 /* WalkthroughPageViewController.swift */,
 			);
 			path = Foodpin;
 			sourceTree = "<group>";
@@ -173,6 +179,8 @@
 				71BDF04A1DB12A8D008A79D6 /* Restaurant.swift in Sources */,
 				719D4D631DA4DDAE004D88AC /* RestaurantTableViewController.swift in Sources */,
 				71287AB31DBFC045002AB825 /* PreviewViewController.swift in Sources */,
+				7157C40A1DE03047009A8AFB /* WalkthroughContentViewController.swift in Sources */,
+				716FB11B1DF162D4006F1381 /* WalkthroughPageViewController.swift in Sources */,
 				719D4D651DA4E972004D88AC /* RestaurantTableViewCell.swift in Sources */,
 				7109EE321DB3449600001B64 /* RestaurantDetailTableViewCell.swift in Sources */,
 				71392ECB1DAFDA62009031D7 /* RestaurantDetailViewController.swift in Sources */,
