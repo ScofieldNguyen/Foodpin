@@ -65,7 +65,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
             presentViewController(pageViewController, animated: true, completion: nil)
             defaults.setBool(true, forKey: "hasViewedWalkthrough")
         }
-        
+
     }
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
@@ -126,14 +126,12 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         cell.locationLabel.text = restaurantToDisplay.location
         cell.typeLabel.text = restaurantToDisplay.type
         cell.accessoryType = restaurantToDisplay.isVisited!.boolValue ? .Checkmark : .None
+        cell.restaurantImage.image = UIImage(data: restaurantToDisplay.image!)
+        cell.restaurantImage.layer.cornerRadius = cell.restaurantImage.frame.size.width / 2
         return cell
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        let imageView = UIImageView(frame: CGRectMake(10, 10, cell.frame.width - 10, cell.frame.height - 10))
-        let image = UIImage(data: restaurants[indexPath.row].image!)
-        imageView.image = image
-        cell.backgroundView = imageView
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

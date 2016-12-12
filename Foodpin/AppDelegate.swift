@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UITabBar.appearance().selectionIndicatorImage = UIImage(named: "tabitem-selected")
+        UITabBar.appearance().tintColor = UIColor.whiteColor()
         return true
     }
 
